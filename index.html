@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BURNOUT PROGRESS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <img src="mat/Лого.svg" alt="Лого"> 
+        </div>
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">О нас</a>
+            <a href="#">Запчасти</a>
+            <a href="dostavka.html">Доставка</a>
+            <a href="#">Корзина</a>
+            <a href="#">Гарантии</a>
+            <a href="#">Контакты</a>
+            <div class="login-button">
+                <script>
+                    // Пример обработки клика по кнопке "Вход"
+                    document.querySelector('.login-button').addEventListener('click', function() {
+                        // Перенаправление на страницу входа
+                        window.location.href = '/BURNOUTPROGRESS'; // Замените '/login' на ваш URL страницы входа
+                    });
+                </script>
+                <i class="Аватар.svg"></i>
+                <span><img src="mat/Аватар2.svg" alt="Аватар"></span>
+            </div>
+        </nav>
+    </header>
+    <!-- Блок 1 -->
+    <div class="container">
+        <div class="image-block animate__animated">
+            <img src="mat/ДЕТАЛИ.png" alt="Изображение">
+        </div>
+        <div class="text-block animate__animated">
+            <h1>ПРИВЕТСТВУЕМ ВАС<br>НА НАШЕМ САЙТЕ!</h1>
+            <p>Здесь вы найдете подходящие<br> детали для своего авто</p>
+            <button class="order-button">Заказать детали</button>
+        </div>
+    </div>
+    
+    <div class="bottom-container">
+        <div class="bottom-text animate__animated">
+            <p>Мы предоставляем широкий<br> выбор по запчастям от<br> <b>отечественного авто</b> до <b>иномарок</b></p>
+        </div>
+        <div class="bottom-image animate__animated">
+            <img src="mat/Гранта 1.png" alt="Изображение">
+        </div>
+    </div>
+    <!-- Блок 2 -->
+    <div class="categories-block">
+        <h1>КАТЕГОРИИ ТОВАРОВ</h1>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="mat/Веста 1.png" alt="АВТОВАЗ">
+                <h2>Запчасти на АВТОВАЗ</h2>
+                <p>Granta, Vesta, Largus, Niva Travel, Niva Legend и т.д.</p>
+                <a href="#">Подробнее</a>
+            </div>
+            <div class="category-card">
+                <img src="mat/Мерс 1.png" alt="Mercedes">
+                <h2>Запчасти на Mercedes</h2>
+                <p>CLS, AMG GT, S-класс, C-класс, G-класс, M-класс и т.д.</p>
+                <a href="#">Подробнее</a>
+            </div>
+            <div class="category-card">
+                <img src="mat/Чанган 1.png" alt="CHANGAN">
+                <h2>Запчасти на CHANGAN</h2>
+                <p>ALSVIN, EADO (plus), CS35, UNI-T, UNI-S, UNI-V, HUNTER и т.д.</p>
+                <a href="#">Подробнее</a>
+            </div>
+            <div class="category-card">
+                <img src="mat/Порше 1.png" alt="Porshe">
+                <h2>Запчасти на Porshe</h2>
+                <p>GT3(4) RS, Carrera, Cayman, 911, 991, Cayenne, taycan и т.д.</p>
+                <a href="#">Подробнее</a>
+            </div>
+            <div class="category-card">
+                <img src="mat/BMW 1.png" alt="BMW">
+                <h2>Запчасти на BMW</h2>
+                <p>M5, M3, M4, M8, X5, XI, X3, 320i, 530d, M135, M340i и т.д.</p>
+                <a href="#">Подробнее</a>
+            </div>
+            <div class="category-card">
+                <img src="mat/GTR 1.png" alt="Nissan">
+                <h2>Запчасти на Nissan</h2>
+                <p>GTR(30-35), Terrano, X-Trail, Murano, Qashqai, Z (350-400) и т.д.</p>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
+        <div class="all-brands">ВСЕ МАРКИ АВТО</div>
+    </div>
+    <!-- Блок 3 -->
+    <div class="faq-block">
+        <h2 class="faq-title">ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+        
+        <div class="faq-item">
+            <div class="question-header">
+                <img src="mat/Мужчина 1.png" alt="?" class="question-icon">
+                <span class="question-text">Есть ли инструкция по установке детали?</span>
+            </div>
+            <p class="answer">При заказе любой детали из ассортимента, мы кладем дополнительно инструкцию по установке. В случае её потери, всегда можно открыть электронную версию</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="faq-item">
+            <div class="question-header">
+                <img src="mat/Женщина 1.png" alt="?" class="question-icon">
+                <span class="question-text">Можно ли вернуть или обменять деталь, если она не подойдёт?</span>
+            </div>
+            <p class="answer">Да, если со дня покупки не прошло 14 дней</p>
+        </div>
+    </div>
+    <!-- подвал -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Логотип, соцсети и нижняя часть -->
+            <div class="logo-section">
+                <img src="mat/Лого.svg" alt="Логотип" class="logo">
+                
+                <!-- Соцсети -->
+                <div class="social-icons">
+                    <a href="#"><img src="mat/telegram.svg" alt="Telegram"></a>
+                    <a href="#"><img src="mat/VK.svg" alt="VK"></a>
+                    <a href="#"><img src="mat/Instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="mat/Whatsapp.svg" alt="WhatsApp"></a>
+                </div>
+
+                <!-- Нижняя часть -->
+                <div class="footer-bottom">
+                    <div class="copyright">© ArmenovichCorp. Все Права Защищены.</div>
+                </div>
+            </div>
+
+            <!-- Колонки -->
+            <div class="columns-wrapper">
+                <!-- Прочее -->
+                <div class="column">
+                    <h4 class="column-title">Прочее</h4>
+                    <ul class="column-links">
+                        <li><a href="#">Авто</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Продажи</a></li>
+                        <li><a href="#">Автозапчасти</a></li>
+                    </ul>
+                </div>
+
+                <!-- Контакты -->
+                <div class="column">
+                    <h4 class="column-title">Контакты</h4>
+                    <ul class="column-links">
+                        <li><a href="#">Приватность</a></li>
+                        <li><a href="#">Политика возврата</a></li>
+                        <li><a href="#">Cookie</a></li>
+                    </ul>
+                </div>
+
+                <!-- Страны -->
+                <div class="column">
+                    <h4 class="column-title">Страны</h4>
+                    <div class="countries">
+                        Россия<br>
+                        Армения<br>
+                        Германия<br>
+                        Япония
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate__animated');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = 1;
+                    el.classList.add('animate__fadeInUp');
+                }, index * 200);
+            });
+        });
+        </script>
+</body>
+</html>

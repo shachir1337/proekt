@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dostavka.css">
+    <title>BURNOUT PROGRESS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <img src="mat/Лого.svg" alt="Лого"> 
+        </div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="#">О нас</a>
+            <a href="#">Запчасти</a>
+            <a href="dostavka.html">Доставка</a>
+            <a href="#">Корзина</a>
+            <a href="#">Гарантии</a>
+            <a href="#">Контакты</a>
+            <div class="login-button">
+                <script>
+                    // Пример обработки клика по кнопке "Вход"
+                    document.querySelector('.login-button').addEventListener('click', function() {
+                        // Перенаправление на страницу входа
+                        window.location.href = '/BURNOUTPROGRESS'; // Замените '/login' на ваш URL страницы входа
+                    });
+                </script>
+                <i class="Аватар.svg"></i>
+                <span><img src="mat/Аватар2.svg" alt="Аватар"></span>
+            </div>
+        </nav>
+    </header>
+    <!-- Блок 1 -->
+    <body>
+        <div class="container"> 
+            </a>
+            <div class="text-block animate__animated">
+            <h1 class="title">Условия Доставки</h1>
+            <h2 class="subtitle">Самовывоз</h2>
+            </div>
+            <div class="text-block animate__animated">
+            <div class="section">
+                <img src="mat/MAGAZ.PNG" alt="Склад" class="side-image">
+                <p>С центрального склада (только для оптовых клиентов, работающих через центральный оптовый склад)</p>
+            </div>
+    
+            <div class="section">
+                <img src="mat/BASHNYA.PNG" alt="Офис" class="side-image">
+                <p>Из офиса продаж, указанного при регистрации</p>
+            </div>
+            <h1 class="title">Доставка</h1>
+    
+            <div class="section">
+                <img src="mat/FURA.PNG" alt="Авто" class="side-image">
+                <p>Доставка производится по всей  России, а также доставляем в Беларусь, Казахстан и Грузию</p>
+            </div>
+    
+            <div class="section">
+                <img src="mat/KOROBKA.PNG" alt="Коробка" class="side-image">
+                <p>Доставим по указанному адресу или в пунт выдачи</p>
+            </div>
+    
+            <div class="questions">
+                <p>Остались ещё <a href="#" class="link">вопросы?</a> Свяжитесь с нами в разделе <a href="#" class="link">Контакты</a></p>
+            </div>
+        </div>
+        </div>
+    </body>
+    </html>
+<!-- подвал -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Логотип, соцсети и нижняя часть -->
+        <div class="logo-section">
+            <img src="mat/Лого.svg" alt="Логотип" class="logo">
+            
+            <!-- Соцсети -->
+            <div class="social-icons">
+                <a href="#"><img src="mat/telegram.svg" alt="Telegram"></a>
+                <a href="#"><img src="mat/VK.svg" alt="VK"></a>
+                <a href="#"><img src="mat/Instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="mat/Whatsapp.svg" alt="WhatsApp"></a>
+            </div>
+
+            <!-- Нижняя часть -->
+            <div class="footer-bottom">
+                <div class="copyright">© ArmenovichCorp. Все Права Защищены.</div>
+            </div>
+        </div>
+
+        <!-- Колонки -->
+        <div class="columns-wrapper">
+            <!-- Прочее -->
+            <div class="column">
+                <h4 class="column-title">Прочее</h4>
+                <ul class="column-links">
+                    <li><a href="#">Авто</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Продажи</a></li>
+                    <li><a href="#">Автозапчасти</a></li>
+                </ul>
+            </div>
+
+            <!-- Контакты -->
+            <div class="column">
+                <h4 class="column-title">Контакты</h4>
+                <ul class="column-links">
+                    <li><a href="#">Приватность</a></li>
+                    <li><a href="#">Политика возврата</a></li>
+                    <li><a href="#">Cookie</a></li>
+                </ul>
+            </div>
+
+            <!-- Страны -->
+            <div class="column">
+                <h4 class="column-title">Страны</h4>
+                <div class="countries">
+                    Россия<br>
+                    Армения<br>
+                    Германия<br>
+                    Япония
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const elements = document.querySelectorAll('.animate__animated');
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.style.opacity = 1;
+                el.classList.add('animate__fadeInUp');
+            }, index * 200);
+        });
+    });
+    </script>
+</body>
+</html>
