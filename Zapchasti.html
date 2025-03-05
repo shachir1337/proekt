@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Zapchasti.css">
+    <title>BURNOUT PROGRESS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <img src="mat/Лого.svg" alt="Лого"> 
+        </div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="#">О нас</a>
+            <a href="Zapchasti.html">Запчасти</a>
+            <a href="dostavka.html">Доставка</a>
+            <a href="#">Корзина</a>
+            <a href="#">Гарантии</a>
+            <a href="#">Контакты</a>
+            <div class="login-button">
+                <script>
+                    // Пример обработки клика по кнопке "Вход"
+                    document.querySelector('.login-button').addEventListener('click', function() {
+                        // Перенаправление на страницу входа
+                        window.location.href = '/BURNOUTPROGRESS'; // Замените '/login' на ваш URL страницы входа
+                    });
+                </script>
+                <i class="Аватар.svg"></i>
+                <span><img src="mat/Аватар2.svg" alt="Аватар"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Блок 1 -->
+
+    <div class="button-container">
+        <button class="sidebar-button">LADA</button>
+        <button class="sidebar-button">CHANGAN</button>
+        <button class="sidebar-button">BMW</button>
+        <button class="sidebar-button">MERCEDES</button>
+        <button class="sidebar-button">PORSCHE</button>
+        <button class="sidebar-button">NISSAN</button>
+        <button class="sidebar-button">TOYOTA</button>
+        <button class="sidebar-button">HYUNDAI</button>
+        <button class="sidebar-button">SUBARU</button>
+    </div>
+     
+    <div class="main-content">
+        <!-- Блок с машиной -->
+        <div class="content-wrapper">
+            <img src="mat/VESTA2 1.png" class="car-photo" alt="Lada Vesta">
+            <img src="mat/LADA VESTA.svg" class="logo-image" alt="LADA VESTA">
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.sidebar-button');
+            const contentWrapper = document.querySelector('.content-wrapper');
+
+            // Автоматическая активация при загрузке
+            buttons[0].classList.add('active');
+            contentWrapper.classList.add('active');
+
+            // Обработчик для других кнопок
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    contentWrapper.classList.toggle('active', this === buttons[0]);
+                });
+            });
+
+  
+            });
+    </script>
+
+    <!-- Блок 2 -->
+
+    <!-- Блок товаров -->
+    <section class="products-section">
+        <div class="products-grid">
+            <!-- Товар 1 -->
+            <div class="product-card">
+                <img src="mat/Усилитель.png" class="product-image" alt="Усилитель руля">
+                <div class="product-content">
+                    <div class="price">2 045 <b>₽</b></div>
+                    <div class="stock">Осталось 5 шт</div>
+                    <div class="product-title">Усилитель руля LADA VESTA (дорестайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <!-- Товар 2 -->
+            <div class="product-card">
+                <img src="mat/Колесо.png" class="product-image" alt="Колеса">
+                <div class="product-content">
+                    <div class="price">11 037 <b>₽</b> за шт</div>
+                    <div class="stock">Осталось 2 шт</div>
+                    <div class="product-title">Колеса LADA VESTA SPORT (дорестайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <!-- Товар 3 -->
+            <div class="product-card">
+                <img src="mat/Двигло 1.png" class="product-image" alt="Двигатель">
+                <div class="product-content">
+                    <div class="price">245 000 <b>₽</b></div>
+                    <div class="stock">Осталось 1 шт</div>
+                    <div class="product-title">Двигатель LADA VESTA 1.6 106 л.с.</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <!-- Товар 4 -->
+            <div class="product-card">
+                <img src="mat/Фара 1.png" class="product-image" alt="Фара">
+                <div class="product-content">
+                    <div class="price">13 062 <b>₽</b></div>
+                    <div class="product-title">Фара (левая) LADA VESTA (дорестайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <!-- Товар 5 -->
+            <div class="product-card">
+                <img src="mat/Руль 1.png" class="product-image" alt="Руль">
+                <div class="product-content">
+                    <div class="price">9 876 <b>₽</b></div>
+                    <div class="product-title">Руль LADA VESTA SPORT (дорестайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <!-- Товар 6 -->
+            <div class="product-card">
+                <img src="mat/Стеклоподъемники 1.png" class="product-image" alt="Стеклоподъемники">
+                <div class="product-content">
+                    <div class="price">1 561 <b>₽</b></div>
+                    <div class="product-title">Блок управления стеклоподъемниками LADA VESTA (дорестайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <!-- Товар 7 -->
+            <div class="product-card">
+                <img src="mat/Мультимедия 1.png" class="product-image" alt="Мультимедия">
+                <div class="product-content">
+                    <div class="price">15 022 <b>₽</b></div>
+                    <div class="stock">Осталось 3 шт</div>
+                    <div class="product-title">Мультимедия на LADA VESTA (дорестайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+        </div>
+
+        <!-- Товар 8 -->
+        <div class="product-card">
+            <img src="mat/Подогрев 1.png" class="product-image" alt="Подогрев">
+            <div class="product-content">
+                <div class="price">3 543 <b>₽</b></div>
+                <div class="stock">Осталось 4 шт</div>
+                <div class="product-title">Подогрев сидений LADA VESTA</div>
+                <button class="add-to-cart">В КОРЗИНУ</button>
+            </div>
+    </div>
+
+    <!-- Товар 9 -->
+    <div class="product-card">
+        <img src="mat/Рейлинги.png" class="product-image" alt="Рейлинги">
+        <div class="product-content">
+            <div class="price">6 541 <b>₽</b></div>
+            <div class="stock">Осталось 2 шт</div>
+            <div class="product-title">Рейлинги LADA VESTA (дорейстайлинг)</div>
+            <button class="add-to-cart">В КОРЗИНУ</button>
+        </div>
+</div>
+
+<!-- Товар 10 -->
+<div class="product-card">
+    <img src="mat/Зеркало.png" class="product-image" alt="Зеркало">
+    <div class="product-content">
+        <div class="price">6 541 <b>₽</b></div>
+        <div class="stock">Осталось 2 шт</div>
+        <div class="product-title">Зеркала (2 шт) LADA VESTA (дорейстайлинг)</div>
+        <button class="add-to-cart">В КОРЗИНУ</button>
+    </div>
+</div>
+    </section>
+    </div>
+
+    <!-- подвал -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Логотип, соцсети и нижняя часть -->
+            <div class="logo-section">
+                <img src="mat/Лого.svg" alt="Логотип" class="logo">
+                
+                <!-- Соцсети -->
+                <div class="social-icons">
+                    <a href="#"><img src="mat/telegram.svg" alt="Telegram"></a>
+                    <a href="#"><img src="mat/VK.svg" alt="VK"></a>
+                    <a href="#"><img src="mat/Instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="mat/Whatsapp.svg" alt="WhatsApp"></a>
+                </div>
+
+                <!-- Нижняя часть -->
+                <div class="footer-bottom">
+                    <div class="copyright">© ArmenovichCorp. Все Права Защищены.</div>
+                </div>
+            </div>
+
+            <!-- Колонки -->
+            <div class="columns-wrapper">
+                <!-- Прочее -->
+                <div class="column">
+                    <h4 class="column-title">Прочее</h4>
+                    <ul class="column-links">
+                        <li><a href="#">Авто</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Продажи</a></li>
+                        <li><a href="#">Автозапчасти</a></li>
+                    </ul>
+                </div>
+
+                <!-- Контакты -->
+                <div class="column">
+                    <h4 class="column-title">Контакты</h4>
+                    <ul class="column-links">
+                        <li><a href="#">Приватность</a></li>
+                        <li><a href="#">Политика возврата</a></li>
+                        <li><a href="#">Cookie</a></li>
+                    </ul>
+                </div>
+
+                <!-- Страны -->
+                <div class="column">
+                    <h4 class="column-title">Страны</h4>
+                    <div class="countries">
+                        Россия<br>
+                        Армения<br>
+                        Германия<br>
+                        Япония
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate__animated');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = 1;
+                    el.classList.add('animate__fadeInUp');
+                }, index * 200);
+            });
+        });
+        </script>
+</body>
+</html>

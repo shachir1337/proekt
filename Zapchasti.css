@@ -1,0 +1,418 @@
+body {
+    animation: fadeIn 0.8s ease-out;
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222222;
+    min-height: 200vh; /* Для демонстрации прокрутки */
+}
+header {
+    animation: fadeInDown 0.8s ease-out 0.2s both;
+    background-color: #222222;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+.logo img {
+    height: 40px; /* Высота логотипа */
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    color: #ffffff; 
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
+.login-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+.login-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+.login-button:hover::after {
+    width: 100%;
+}
+
+/* Анимации */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Блок 1 */
+
+.button-container {
+    animation: fadeInDown 0.8s ease-out 0.4s both;
+    margin: 20px 0;
+    left: 20px;
+    top: 80px;
+    display: flex;
+    gap: 17px;
+    z-index: 200;
+    padding-left: 20px;
+}
+
+.sidebar-button {
+    width: 85px;
+    height: 24px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 12.5px;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.sidebar-button.active {
+    background: white !important;
+    color: #222 !important;
+    border-color: transparent !important;
+}
+
+/* Блок с машиной (Блок 1) */
+.main-content {
+    padding-top: 40px;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    animation: fadeIn 0.8s ease-out 0.6s both;
+    position: relative;
+    text-align: center;
+    padding: 100px 20px 50px; /* Увеличим верхний паддинг */
+}
+
+.car-photo {
+    max-width: 1400px;
+    width: 85%;
+    height: auto;
+    z-index: 2;
+    position: relative;
+}
+.logo-image {
+    margin-top: 230px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -25%); /* Смещаем вверх на 25% */
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    pointer-events: none; /* Чтобы клики проходили сквозь логотип */
+}
+
+/* Блок товаров (Блок 2) */
+
+.products-section {
+    animation: fadeIn 0.8s ease-out 0.8s both;
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr)); /* Изменили на 5 колонок */
+    gap: 36px 27px;
+    margin-top: 450px;
+}
+
+.product-card {
+    background: #393737;
+    border-radius: 28px;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Добавим для правильного сжатия */
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+
+.product-image {
+    background-color: #fff;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0; /* Запрещаем сжатие изображения */
+}
+
+.product-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stock {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 14px;
+    color: #FF3366;
+    margin-bottom: 2px;
+    margin-top: -10px;
+}
+
+.product-title {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.add-to-cart {
+    background: #971717;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    padding: 12px 0;
+    width: 100%;
+    font-family: 'Russo One', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.add-to-cart:hover {
+    transform: scale(1.03);
+}
+
+/* Адаптивность */
+
+@media (max-width: 1400px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Контейнер кнопок */
+.button-container {
+    left: 20px;
+    top: 80px; /* Отступ под шапку */
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+    max-width: calc(100% - 40px);
+}
+
+.sidebar-button {
+    width: 85px;
+    height: 24px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 12.5px;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.sidebar-button:hover {
+    background: white;
+    color: #222222;
+    font-weight: 600;
+}
+
+
+
+/* ПОДВАЛ */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 50px 20px 30px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+}
+
+/* Логотип, соцсети и нижняя часть */
+.logo-section {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 480px;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    padding: 0 20px 0 20px;
+    transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+
+.footer-bottom {
+    margin-top: auto;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: -10px;
+    width: 100%;
+    text-align: center;
+}
+
+.brand-name {
+    font-family: 'Russo One', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    color: #808080;
+    font-size: 14px;
+}
+
+/* Основные колонки */
+.columns-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 15%;
+}
+
+.column {
+    flex: 1;
+}
+
+.column-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.column-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column-links li {
+    margin-bottom: 15px;
+}
+
+.column-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+.column-links a:hover {
+    color: #971717;
+}
+
+/* Страны */
+.countries {
+    color: #b3b3b3;
+    line-height: 1.8;
+    font-size: 15px;
+}

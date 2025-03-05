@@ -5,6 +5,7 @@ body {
     background-color: #222222;
 }
 header {
+    animation: fadeInDown 0.8s ease-out 0.2s both;
     background-color: #222222;
     padding: 20px 40px;
     display: flex;
@@ -90,7 +91,7 @@ nav a:hover::after {
     animation-name: fadeInUp;
 }
 
-/* Основные стили остаются прежними */
+
 .container {
     display: flex;
     align-items: center;
@@ -569,3 +570,4 @@ nav a:hover::after {
     line-height: 1.8;
     font-size: 15px;
 }
+
