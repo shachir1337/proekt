@@ -1,0 +1,337 @@
+body {
+    animation: fadeIn 0.8s ease-out;
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222222;
+}
+
+header {
+    animation: fadeInDown 0.8s ease-out 0.2s both;
+    background-color: #222222;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+.logo img {
+    height: 40px; /* Высота логотипа */
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    color: #ffffff; 
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
+.login-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+.login-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+.login-button:hover::after {
+    width: 100%;
+}
+
+/* Блок приветствия 1 */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+/*блок с корзиной*/
+
+.cart-container {
+    width: 800px;  /* Увеличенный размер блока */
+    padding: 30px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin: 40px 0;  /* Отступы от шапки и подвала */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.item-image {
+    width: 200px;  /* Увеличенный размер изображения */
+    height: 200PX;
+    border-radius: 5px;
+    transform: translateY(-5px);
+}
+
+.item-details {
+    flex-grow: 1;
+    margin-left: 20px;  /* Увеличенные отступы */
+}
+
+.item-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-price {
+    font-size: 26px;  /* Увеличенный шрифт цены */
+    color: #ffffff;
+}
+
+.discount-price {
+    font-size: 18px;
+    color: #bbbbbb;
+}
+
+.item-description {
+    margin: 8px 0;
+    color: #ffffff;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.quantity-button {
+    background-color: #444;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantity {
+    margin: 0 10px;
+    font-size: 20px;  /* Увеличенный шрифт количества */
+}
+
+.musorka {
+    margin: 0 10px;
+    font-size: 20px;
+    border: none; /* Убедитесь, что рамка отсутствует */
+    padding: 0; /* Уберите отступы, если они есть */
+    background-color: transparent; /* Убедитесь, что фон прозрачный */
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.remove-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-container {
+    display: flex; /* Используем Flexbox для центрирования содержимого внутри корзины */
+    flex-direction: column; /* Устанавливаем вертикальное направление */
+    justify-content: center; /* Центрируем по вертикали */
+    align-items: center; /* Центрируем по горизонтали */
+    background-color: #292929; /* Цвет фона блока корзины */
+    border-radius: 10px; /* Округление углов блока */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для блока */
+    padding: 20px; /* Внутренние отступы */
+    width: 90%; /* Ширина блока */
+    max-width: 600px; /* Максимальная ширина блока */
+    margin: 129px auto;
+}
+
+/* Стили для кнопок */
+.button-container {
+    display: flex; /* Используем Flexbox для центрирования */
+    flex-direction: column; /* Располагаем кнопки в столбик */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    margin-top: 20px; /* Отступ сверху для кнопок */
+}
+
+.checkout-button {
+    width: auto; /* Автоматическая ширина в зависимости от текста */
+    min-width: 200px; /* Минимальная ширина кнопки */
+    background-color: #971717; /* Основной цвет */
+    color: #FFBEBE; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 15px 30px; /* Увеличенные отступы */
+    border-radius: 20px; /* Округление кнопки */
+    cursor: pointer; /* Курсор при наведении */
+    font-size: 19px; /* Размер шрифта */
+    margin: 10px 0; /* Отступ между кнопками */
+    transition: background-color 0.5s ease, transform 0.5s ease; /* Плавный переход цвета и трансформации */
+}
+
+.checkout-button:hover {
+    background-color: #d62839; /* Цвет кнопки при наведении */
+    transform: scale(1.05); /* Увеличение кнопки на 5% */
+}
+
+/* ПОДВАЛ */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 50px 20px 30px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+}
+
+/* Логотип, соцсети и нижняя часть */
+.logo-section {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 480px;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    padding: 0 20px 0 20px;
+    transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+
+.footer-bottom {
+    margin-top: auto;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: -10px;
+    width: 100%;
+    text-align: center;
+}
+
+.brand-name {
+    font-family: 'Russo One', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    color: #808080;
+    font-size: 14px;
+}
+
+/* Основные колонки */
+.columns-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 15%;
+}
+
+.column {
+    flex: 1;
+}
+
+.column-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.column-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column-links li {
+    margin-bottom: 15px;
+}
+
+.column-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+.column-links a:hover {
+    color: #971717;
+}
+
+/* Страны */
+.countries {
+    color: #b3b3b3;
+    line-height: 1.8;
+    font-size: 15px;
+}
