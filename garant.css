@@ -103,10 +103,11 @@ nav a:hover::after {
 
 /* Изображение запчастей */
 .parts-image {
-  width: 200px;
+  width: 250px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
+  margin-left: 65px;
 }
 
 /* Текст внутри блоков */
@@ -154,9 +155,10 @@ nav a:hover::after {
 
 /* Изображение машины */
 .car-image {
-  width: 250px;
+  width: 300px;
   height: auto;
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-right: 50px;
 }
 
 /* --- Секция "Знакомство с нами" --- */
@@ -168,6 +170,7 @@ nav a:hover::after {
 }
 
 .about-title {
+  font-family: 'Russo One';
   text-shadow: 0 0 8px #fff;
   font-size: 24px;
   font-weight: bold;

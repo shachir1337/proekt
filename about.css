@@ -168,6 +168,7 @@ nav a:hover::after {
 }
 
 .about-title {
+  font-family: 'Russo One';
   text-shadow: 0 0 8px #fff;
   font-size: 24px;
   font-weight: bold;
