@@ -1,0 +1,349 @@
+/* Основные стили */
+body {
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222222;
+  color: white;
+}
+
+/* HEADER */
+header {
+  background-color: #222222;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.logo img {
+  height: 40px;
+  padding-top: 30px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.login-button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.login-button:hover::after {
+  width: 100%;
+}
+
+/* Основной контейнер */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* Блок приветствия 1 */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+/* Блок информации */
+.info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 45%;
+}
+
+/* Изображение запчастей */
+.parts-image {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Текст внутри блоков */
+.info-block p {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Жирный текст */
+.bold {
+  font-weight: bold;
+}
+
+/* Заголовок блока */
+.info-block h2 {
+  font-family: 'Russo One';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Изображение машины */
+.car-image {
+  width: 250px;
+  height: auto;
+  margin-top: 15px;
+}
+
+/* --- Секция "Знакомство с нами" --- */
+.about-section {
+  max-width: 1000px;
+  text-align: center;
+  margin: 50px auto;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.about-title {
+  text-shadow: 0 0 8px #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-block {
+  width: 30%;
+  text-align: center;
+}
+
+.about-block h3 {
+  font-family: 'Russo One';
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.about-car img {
+  width: 300px;
+}
+
+.top, .bottom {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.left {
+  font-family: 'Exo 2' sans-serif;
+  text-align: center;
+}
+
+.right {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-row {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .about-block {
+      width: 80%;
+      text-align: center;
+  }
+  
+  .about-car img {
+      width: 200px;
+  }
+}
+
+
+/* ПОДВАЛ */
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 50px 20px 30px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+}
+
+/* Логотип, соцсети и нижняя часть */
+.logo-section {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  width: 480px;
+  margin-bottom: 25px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  margin-left: 100px;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  padding: 0 20px 0 20px;
+  transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  margin-top: auto;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  margin-top: -10px;
+  width: 100%;
+  text-align: center;
+}
+
+.brand-name {
+  font-family: 'Russo One', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.copyright {
+  color: #808080;
+  font-size: 14px;
+}
+
+/* Основные колонки */
+.columns-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 15%;
+}
+
+.column {
+  flex: 1;
+}
+
+.column-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 18px;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.column-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column-links li {
+  margin-bottom: 15px;
+}
+
+.column-links a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 15px;
+}
+
+.column-links a:hover {
+  color: #971717;
+}
+
+/* Страны */
+.countries {
+  color: #b3b3b3;
+  line-height: 1.8;
+  font-size: 15px;
+}

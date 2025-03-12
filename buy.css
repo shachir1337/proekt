@@ -9,7 +9,7 @@ body {
 header {
     animation: fadeInDown 0.8s ease-out 0.2s both;
     background-color: #222222;
-    padding: 20px 40px;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +17,7 @@ header {
 }
 .logo img {
     height: 40px; /* Высота логотипа */
+    padding-top: 30px;
 }
 nav {
     display: flex;
@@ -193,7 +194,7 @@ nav a:hover::after {
     padding: 20px; /* Внутренние отступы */
     width: 90%; /* Ширина блока */
     max-width: 600px; /* Максимальная ширина блока */
-    margin: 129px auto;
+    margin: 389px auto;
 }
 
 /* Стили для кнопок */
@@ -223,6 +224,7 @@ nav a:hover::after {
     transform: scale(1.05); /* Увеличение кнопки на 5% */
 }
 
+
 /* ПОДВАЛ */
 .footer {
     background: #1a1a1a;
@@ -233,7 +235,7 @@ nav a:hover::after {
 
 .footer-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     gap: 80px;
 }

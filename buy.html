@@ -15,12 +15,12 @@
         </div>
         <nav>
             <a href="index.html">Главная</a>
-            <a href="#">О нас</a>
+            <a href="about.html">О нас</a>
             <a href="Zapchasti.html">Запчасти</a>
             <a href="dostavka.html">Доставка</a>
             <a href="buy.html">Корзина</a>
-            <a href="#">Гарантии</a>
-            <a href="#">Контакты</a>
+            <a href="garant.html">Гарантии</a>
+            <a href="Contacts.html">Контакты</a>
             <div class="login-button">
                 <script>
                     document.querySelector('.login-button').addEventListener('click', function() {
@@ -127,9 +127,16 @@ document.addEventListener('DOMContentLoaded', function() {
             quantityElement.innerText = currentQuantity;
         }
 
+        function changeQuantity(change) {
+    quantity += change; 
+    if (quantity < 1) quantity = 1; // Prevent negative quantity
+    updatePrice(); // Update displayed values
+}
+
         function removeItem() {
             const cartItem = document.querySelector('.cart-item');
             cartItem.remove();
+            document.getElementById('cart-item').remove(); 
         }
 
         let quantity = 1; // Starting quantity
@@ -139,16 +146,6 @@ function updatePrice() {
     const currentPriceElement = document.querySelector('.current-price');
     currentPriceElement.innerText = `${pricePerUnit * quantity} ₽`; 
     document.getElementById('item-quantity').innerText = quantity; // Update quantity display
-}
-
-function changeQuantity(change) {
-    quantity += change; 
-    if (quantity < 1) quantity = 1; // Prevent negative quantity
-    updatePrice(); // Update displayed values
-}
-
-function removeItem() {
-    document.getElementById('cart-item').remove(); 
 }
 
 function checkout() {

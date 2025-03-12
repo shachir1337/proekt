@@ -9,7 +9,7 @@ body {
 header {
     animation: fadeInDown 0.8s ease-out 0.2s both;
     background-color: #222222;
-    padding: 20px 40px;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +17,7 @@ header {
 }
 .logo img {
     height: 40px; /* Высота логотипа */
+    padding-top: 30px;
 }
 nav {
     display: flex;
