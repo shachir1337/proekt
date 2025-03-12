@@ -104,6 +104,7 @@ nav a:hover::after {
 }
 
 .title {
+    text-shadow: 0 0 8px #fff;
     text-align: center;
     font-size: 36px;  /* Увеличиваем размер заголовка */
     font-weight: bold;
@@ -119,6 +120,7 @@ nav a:hover::after {
 }
 
 .section {
+    text-align: center;
     display: flex;
     align-items: center;
     margin-bottom: 30px;  /* Увеличиваем отступ между секциями */
