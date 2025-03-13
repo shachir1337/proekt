@@ -127,6 +127,9 @@ nav a:hover::after {
     margin-block-end: 70px;
     font-size: 25px;
 }
+.section p{
+    margin-left: 110px;
+}
 
 .side-image {
     width: 200px;  /* Увеличиваем ширину изображений */
