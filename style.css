@@ -639,6 +639,7 @@ nav a:hover::after {
         height: 20px;
         cursor: pointer;
         z-index: 1001;
+        padding-bottom: 15px;
     }
 
     .hamburger-line {
