@@ -601,34 +601,38 @@ nav a:hover::after {
     }
 
     nav {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 100%;
-        max-width: 300px;
-        height: calc(100vh - 70px);
-        background: #222222;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        transition: right 0.3s ease-in-out;
-        z-index: 1000;
-        border-left: 1px solid #444;
+        background: var(--bg-color);
+        row-gap: 0.5rem;
+        text-align: center;
+        clip-path: circle(0% at 0% 0%);
+        transition: 0.6s;
         
     }
 
     nav.active {
-        right: 0;
+        clip-path: circle(144% at 0% 0%);
+    }
+
+    .nav a:hover,
+    .nav .active {
+      border-bottom: none;
+      background: var(--main-color);
+      color: var(--bg-color);
     }
 
     nav a {
-        width: 100%;
-        padding: 15px 0;
-        border-bottom: 1px solid #333;
+        display: block;
+        padding: 15px;
     }
 
     .hamburger {
-        display: flex;
+        display: initial;
         flex-direction: column;
         justify-content: space-between;
         width: 30px;
