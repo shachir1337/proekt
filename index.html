@@ -194,6 +194,26 @@
         });
         </script>
         <script>
+            // Обновленный скрипт для активных ссылок
+document.addEventListener('DOMContentLoaded', function() {
+    // Определяем текущую страницу
+    const currentPath = window.location.pathname;
+    let currentPage = currentPath.split('/').pop().split('?')[0];
+    
+    // Обработка главной страницы
+    if(currentPage === "" || currentPage === "/") currentPage = "index.html";
+    
+    // Находим и отмечаем активную ссылку
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+        const linkPath = link.getAttribute('href').split('?')[0];
+        if(linkPath === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+        </script>
+        <script>
             // Гамбургер-меню
             const hamburger = document.querySelector('.hamburger');
             const nav = document.querySelector('nav');

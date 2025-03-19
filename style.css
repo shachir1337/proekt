@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Russo One";
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+}
+@font-face {
+    font-family: "Exo 2";
+    src: url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap");
+}
+
 body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
@@ -29,6 +38,11 @@ nav a {
     position: relative;
     padding-bottom: 5px;
     transition: all 0.3s ease;
+}
+
+nav a.active::after {
+    width: 100% !important;
+    background: #fff;
 }
 nav a:hover {
     color: #ffffff; 
@@ -111,91 +125,62 @@ nav a:hover::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 20px;
+    padding: 40px 16px;
     background-color: #222222;
     flex-wrap: wrap;
 }
 
-/* Адаптивные стили */
-@media (max-width: 1200px) {
-    .image-block img {
-        margin-left: 200px;
-        width: 500px;
-    }
-    
-    .bottom-image img {
-        padding-right: 150px;
-        width: 700px;
-    }
+.image-block,
+.text-block,
+.bottom-text,
+.bottom-image {
+    flex: 1 1 300px;
+    min-width: 250px;
 }
 
-@media (max-width: 992px) {
-    .container, .bottom-container {
+/* Адаптация */
+@media (max-width: 768px) {
+    .container,
+    .bottom-container {
         flex-direction: column;
-        text-align: center;
-        padding: 30px 15px;
-    }
-
-    .image-block img {
-        margin-left: 0;
-        width: 100%;
-        max-width: 500px;
+        padding: 30px 16px;
+        gap: 40px;
     }
 
     .text-block {
-        padding-left: 0;
-        margin-top: 30px;
+        order: 0;
     }
-
-    .bottom-text {
-        padding-right: 0;
-        padding-bottom: 30px;
-    }
-
-    .bottom-image img {
-        padding-right: 0;
+    .image-block {
+        margin-right: 70px;
         width: 100%;
-        max-width: 600px;
     }
-}
-
-@media (max-width: 768px) {
-    .text-block h1 {
-        font-size: 2.5em;
-    }
-
-    .text-block p {
-        font-size: 1.5em;
+    .image-block,
+    .bottom-image {
+        max-width: 100%;
+        text-align: center;
     }
 
     .bottom-text {
-        font-size: 2em;
+        order: 1;
+        padding: 0 !important;
     }
 
-    .text-block .order-button {
-        padding: 12px 25px;
-        font-size: 1.2em;
+    .bottom-image {
+        order: 2;
     }
 }
 
 @media (max-width: 480px) {
     .text-block h1 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
-    .text-block p {
-        font-size: 1.2em;
-    }
-
-    .bottom-text {
-        font-size: 1.5em;
-    }
-
-    .text-block .order-button {
-        padding: 10px 20px;
-        font-size: 1em;
+    .order-button {
+        width: 100%;
+        max-width: 300px;
     }
 }
+
 .animate-fade-in {
     animation: fadeIn 1s ease-out forwards;
 }
@@ -217,20 +202,23 @@ nav a:hover::after {
 
 .text-block {
     text-align: center;
+    order: 1;
     flex: 1;
     padding-left: 20px;
+    margin-right: 200px;
 }
 
 .text-block h1 {
     font-family: 'Russo One', sans-serif;
-    font-size: 3em;
+    font-size: clamp(1.5rem, 6vw, 3rem);
+    line-height: 1.2;
     margin-bottom: 20px;
     color: #fff;
 }
 
 .text-block p {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: clamp(1.7rem, 3vw, 1.5rem);
+    margin-bottom: 30px;
     margin-top: 10px;
     color: #fff;
 }
@@ -247,17 +235,32 @@ nav a:hover::after {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.order-button {
+    font-family: 'Russo One';
+    background-color: #fff;
+    color: #971717;
+    padding: clamp(12px, 3vw, 16px) clamp(24px, 6vw, 32px);
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+}
 
 .text-block .order-button:hover {
     background-color: #971717;
     color: #fff;
 }
 
-.image-block img {
-    margin-left: 450px;
-    max-width: 100%;
-    width: 600px;
+.image-block img,
+.bottom-image img {
+    width: 100%;
     height: auto;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
 }
 
 .bottom-container {
@@ -274,11 +277,19 @@ nav a:hover::after {
     flex: 1;
     font-size: 3em;
     color: #fff;
-    padding-right: 140px;
+    padding-right: 100px;
     padding-bottom: 120px;
+}
+.bottom-text p {
+    font-family: 'Exo 2';
+    color: #fff;
+    font-size: clamp(3rem, 4vw, 1.75rem);
+    text-align: center;
+    line-height: 1.4;
 }
 
 .bottom-image img {
+    margin-right: -5px;
     padding-right: 250px;
     max-width: 100%;
     width: 800px;
@@ -690,30 +701,35 @@ nav a:hover::after {
     }
 
     nav {
-        position: fixed;
-        top: 70px;
+        z-index: 1;
+        position: absolute;
+        top: 100%;
         right: 0;
         left: 0;
-        width: 100%;
-        max-width: 300px;
-        height: calc(100vh - 70px);
-        background: #222222;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        transition: right 0.3s ease-in-out;
-        z-index: 1000;
-        border-left: 1px solid #444;
+        background: var(--bg-color);
+        row-gap: 0.5rem;
+        text-align: center;
+        clip-path: circle(0% at 0% 0%);
+        transition: 0.6s;
+        background-color: #222222;
     }
 
     nav.active {
-        right: 0;
+        clip-path: circle(144% at 0% 0%);
     }
 
     nav a {
-        width: 100%;
-        padding: 15px 0;
-        border-bottom: 1px solid #333;
+        display: block;
+        padding: 15px;
+    }
+
+    .nav a:hover,
+    .nav .active {
+      border-bottom: none;
+      background: var(--main-color);
+      color: var(--bg-color);
     }
 
     .hamburger {
