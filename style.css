@@ -47,7 +47,8 @@ nav a:hover::after {
     width: 100%;
 }
 .login-button {
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     color: #ffffff;
@@ -62,8 +63,8 @@ nav a:hover::after {
 }
 
 .login-button img {
-    width: 60%;
-    height: 55%;
+    width: 65%;
+    height: 60%;
     object-fit: contain;
     padding-top: 3.8px;
     padding-right: 6px;
@@ -472,6 +473,7 @@ nav a:hover::after {
     background: #494949;
     margin: 40px auto;
 }
+
 /* ПОДВАЛ */
 .footer {
     background: #1a1a1a;
@@ -497,7 +499,9 @@ nav a:hover::after {
 
 .logo {
     width: 480px;
+    max-width: 100%;
     margin-bottom: 25px;
+    height: auto;
 }
 
 .social-icons {
@@ -585,8 +589,91 @@ nav a:hover::after {
     font-size: 15px;
 }
 
+/* Мобильная адаптация (подвал) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .logo-section {
+        flex: none;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .social-icons {
+        margin-left: 0;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .social-icons img {
+        padding: 0 15px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .columns-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .column {
+        text-align: center;
+    }
+    
+    .column-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    
+    .column-links a {
+        font-size: 14px;
+    }
+    
+    .countries {
+        font-size: 14px;
+    }
+    
+    .footer-bottom {
+        padding-top: 15px;
+        margin-top: 20px;
+    }
+}
 
-/* Мобильная адаптация */
+@media (max-width: 480px) {
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+        padding: 0 12px;
+    }
+    
+    .logo {
+        max-width: 250px;
+    }
+    
+    .copyright {
+        font-size: 12px;
+    }
+    
+    .column-links li {
+        margin-bottom: 12px;
+    }
+}
+
+
+/* Мобильная адаптация (шапка) */
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
