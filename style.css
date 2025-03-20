@@ -1,11 +1,5 @@
-@font-face {
-    font-family: "Russo One";
-    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
-}
-@font-face {
-    font-family: "Exo 2";
-    src: url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap");
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
 
 body {
     font-family: 'Exo 2', sans-serif;
@@ -732,6 +726,18 @@ nav a:hover::after {
       color: var(--bg-color);
     }
 
+    /* Мелкие исправления в Блоке 1 */
+    .bottom-text p {
+        font-size: 2.25rem;
+    }
+    .container {
+        margin-left: 20px;
+    }
+    .text-block h1 {
+        font-size: 1.55rem;
+    }
+    /* Конец исправлений */
+
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -749,7 +755,7 @@ nav a:hover::after {
         background: #fff;
         transition: all 0.3s ease;
     }
-
+ 
     .hamburger.active .hamburger-line:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
