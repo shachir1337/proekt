@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
+
 body {
     animation: fadeIn 0.8s ease-out;
     font-family: 'Exo 2', sans-serif;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #222222;
@@ -32,6 +37,11 @@ nav a {
     padding-bottom: 5px;
     transition: all 0.3s ease;
 }
+
+nav a.active::after {
+    width: 100% !important;
+    background: #fff;
+}
 nav a:hover {
     color: #ffffff; 
 }
@@ -49,14 +59,27 @@ nav a:hover::after {
     width: 100%;
 }
 .login-button {
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     color: #ffffff;
     cursor: pointer;
-    transition: color 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.login-button span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.login-button img {
+    width: 65%;
+    height: 60%;
+    object-fit: contain;
+    padding-top: 3.8px;
+    padding-right: 6px;
 }
 .login-button::after {
     content: '';
@@ -97,42 +120,70 @@ nav a:hover::after {
 
 /*блок с корзиной*/
 
+.main-content {
+    flex: 1;
+    padding: 30px 0 60px;
+}
+
+/* Контейнер корзины */
+.cart-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .cart-container {
-    width: 800px;  /* Увеличенный размер блока */
-    height: 0px;
+    width: 90%;  /* Увеличенный размер блока */
+    max-width: 920px;
+    /* height: 200px; */
+    min-height: -20vh;
+    max-height: 1500vh;
     padding: 30px;
     background-color: #282828;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin: 40px 0;  /* Отступы от шапки и подвала */
+    margin: 40px auto;  /* Отступы от шапки и подвала */
 }
 
 .cart-item {
     display: flex;
+    gap: 25px;
     align-items: center;
-    background-color: #3a3a3a;
+    /* background-color: #3a3a3a; */
     padding: 20px;
-    width: 920px;
-    height: 800px;
-    border-radius: 8px;
-    margin: 15px 0;
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 .item-image {
-    width: 400px;  /* Увеличенный размер изображения */
-    height: 400PX;
-    border-radius: 5px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+    flex-shrink: 0;
     transform: translateY(-5px);
 }
 
 .item-details {
     flex-grow: 1;
+    display: flex;
     margin-left: 20px;  /* Увеличенные отступы */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .item-price {
     display: flex;
     flex-direction: column;
+}
+
+.item-price .current-price {
+    font-size: 24px;
+    color: #fff;
 }
 
 .current-price {
@@ -146,14 +197,23 @@ nav a:hover::after {
 }
 
 .item-description {
-    font-size: 20px;
-    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 10px 0;
     color: #ffffff;
+}
+.cart-footer {
+    margin-top: 40px;
+    padding: 25px;
+    background: #2a2a2a;
+    border-radius: 12px;
 }
 
 .item-quantity {
     display: flex;
     align-items: center;
+    gap: 12px;
+    margin-top: 15px;
     color: white;
 }
 
@@ -161,7 +221,8 @@ nav a:hover::after {
     background-color: #444;
     color: #ffffff;
     border: none;
-    padding: 10px;
+    padding: 6px 14px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -210,22 +271,44 @@ nav a:hover::after {
 }
 
 .checkout-button {
-    width: 500px; /* Автоматическая ширина в зависимости от текста */
+    width: 100%; /* Автоматическая ширина в зависимости от текста */
     min-width: 200px; /* Минимальная ширина кнопки */
     background-color: #971717; /* Основной цвет */
     color: #FFBEBE; /* Цвет текста */
     border: none; /* Убираем рамку */
-    padding: 15px 30px; /* Увеличенные отступы */
+    padding: 18px; /* Увеличенные отступы */
     border-radius: 20px; /* Округление кнопки */
     cursor: pointer; /* Курсор при наведении */
-    font-size: 30px; /* Размер шрифта */
+    font-size: 18px; /* Размер шрифта */
     margin: 15px 0; /* Отступ между кнопками */
+    margin-top: 20px;
     transition: background-color 0.5s ease, transform 0.5s ease; /* Плавный переход цвета и трансформации */
 }
 
 .checkout-button:hover {
     background-color: #d62839; /* Цвет кнопки при наведении */
     transform: scale(1.05); /* Увеличение кнопки на 5% */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .item-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .item-description {
+        font-size: 14px;
+    }
+    
+    .item-price .current-price {
+        font-size: 20px;
+    }
 }
 
 
@@ -341,3 +424,197 @@ nav a:hover::after {
     line-height: 1.8;
     font-size: 15px;
 }
+
+/* Мобильная адаптация (подвал) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .logo-section {
+        flex: none;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .social-icons {
+        margin-left: 0;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .social-icons img {
+        padding: 0 15px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .columns-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .column {
+        text-align: center;
+    }
+    
+    .column-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    
+    .column-links a {
+        font-size: 14px;
+    }
+    
+    .countries {
+        font-size: 14px;
+    }
+    
+    .footer-bottom {
+        padding-top: 15px;
+        margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+        padding: 0 12px;
+    }
+    
+    .logo {
+        max-width: 250px;
+    }
+    
+    .copyright {
+        font-size: 12px;
+    }
+    
+    .column-links li {
+        margin-bottom: 12px;
+    }
+  }
+  
+  
+  /* Мобильная адаптация (шапка) */
+  @media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        position: relative;
+    }
+  
+    body.menu-open {
+        overflow: hidden;
+    }
+  
+    .logo img {
+        height: 35px;
+        padding-top: 15px;
+    }
+  
+    nav {
+        z-index: 1;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        row-gap: 0.5rem;
+        text-align: center;
+        clip-path: circle(0% at 0% 0%);
+        transition: 0.6s;
+        background-color: #222222;
+    }
+  
+    nav.active {
+        clip-path: circle(144% at 0% 0%);
+    }
+  
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+  
+    .nav a:hover,
+    .nav .active {
+      border-bottom: none;
+      background: var(--main-color);
+      color: var(--bg-color);
+    }
+  
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1001;
+        padding-bottom: 15px;
+    }
+  
+    .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+    }
+  
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+  
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+  
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+  
+    .login-button {
+        width: 100%;
+        margin-top: 0;
+        justify-content: center;
+    }
+  
+    .login-button span {
+        width: 28px;
+        height: 28px;
+    }
+  
+    
+    /* Скрываем обычное меню на мобильных */
+    .hamburger {
+        display: flex;
+    }
+  
+    nav {
+        display: none;
+    }
+  
+    nav.active {
+        display: flex;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+  }

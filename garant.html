@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
     <!-- Шапка сайта -->
     <header>
         <div class="logo">
-            <img src="mat/Лого.svg" alt="Лого"> 
+            <img src="mat/Лого.svg" alt="Лого">
+        </div>
+        <div class="hamburger">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
         </div>
         <nav>
             <a href="index.html">Главная</a>
@@ -25,7 +32,7 @@
             <a href="Contacts.html">Контакты</a>
             <div class="login-button">
                 <script>
-                    document.querySelector('.login-button').addEventListener('click', function() {
+                    document.querySelector('.login-button').addEventListener('click', function () {
                         window.location.href = '/BURNOUTPROGRESS';
                     });
                 </script>
@@ -36,103 +43,161 @@
 
     <!-- Блок 1 -->
     <div class="text-block animate__animated">
-    <div class="container">
-        <div class="info-block">
-            <img src="mat/t.png" alt="Автозапчасти" class="parts-image">
-            <p>Решим все ваши проблемы  <br>и <span class="bold"> вернем деньги очень быстро</span></p>
+        <div class="container">
+            <div class="info-block">
+                <img src="mat/t.png" alt="Автозапчасти" class="parts-image">
+                <p>Решим все ваши проблемы <br>и <span class="bold"> вернем деньги очень быстро</span></p>
+            </div>
+            <div class="info-block">
+                <h2>МЫ ВСЕГДА ЗА СВОЕГО КЛИЕНТА <br>И НИКОГДА НЕ ОТКАЖЕМ</h2>
+                <p>В данном разделе можно узнать <br>о гарантии</p>
+                <img src="mat/troikajuguli.svg" alt="Автомобиль" class="car-image">
+            </div>
         </div>
-        <div class="info-block">
-            <h2>МЫ ВСЕГДА ЗА СВОЕГО КЛИЕНТА <br>И НИКОГДА НЕ ОТКАЖЕМ</h2>
-            <p>В данном разделе можно узнать <br>о гарантии</p>
-            <img src="mat/troikajuguli.svg" alt="Автомобиль" class="car-image">
-        </div>
-    </div>
 
-    <!-- Блок "Гарантии" -->
-    <div class="text-block animate__animated">
-<section class="about-section">
-    <h2 class="about-title">ГАРАНТИИ</h2>
-    <div class="about-content">
-        <div class="about-block top">
-            <h3>ДЕНЬГИ В БЫСТРЫЕ СРОКИ</h3>
-            <p>Если вам не понравился товар или вы не <br> хотите замены, вернем обратно деньги <br> за товар и за короткие сроки</p>
-        </div>
-        <div class="about-row">                  
-            <div class="about-block left">
-                <h3>ВОЗМОЖНА <br> ЗАМЕНА</h3>
-                <p>Если вас не устроило  <br>качество полученного <br> товара, сделаем замену <br>товара на другой </p>
-            </div>
-            <div class="about-car">
-                <img src="mat/Niva.svg" alt="Автомобиль">
-            </div>
-            <div class="about-block right">
-                <h3>ПОМОЖЕМ  <br>В ЛЮБОЕ ВРЕМЯ</h3>
-                <p>Наша главная задача быть  <br>самыми быстрыми и отзывчивыми с нашими клиентами</p>
-            </div>
-        </div>
-        <div class="about-block bottom">
-            <h3>ТОВАРЫ ЗАСТРАХОВАНЫ</h3>
-            <p>Каждый товар который мы отправляем <br> доставкой или заказываем в пункт<br> выдачи застрахован </p>
-        </div>
-    </div>
-</section>
-
-    <!-- Подвал -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="logo-section">
-                <img src="mat/Лого.svg" alt="Логотип" class="logo">
-                <div class="social-icons">
-                    <a href="Contacts.html"><img src="mat/telegram.svg" alt="Telegram"></a>
-                    <a href="Contacts.html"><img src="mat/VK.svg" alt="VK"></a>
-                    <a href="Contacts.html"><img src="mat/Instagram.svg" alt="Instagram"></a>
-                    <a href="Contacts.html"><img src="mat/Whatsapp.svg" alt="WhatsApp"></a>
-                </div>
-                <div class="footer-bottom">
-                    <div class="copyright">© ArtemovichCorp. Все Права Защищены.</div>
-                </div>
-            </div>
-
-            <div class="columns-wrapper">
-                <div class="column">
-                    <h4 class="column-title">Магазин</h4>
-                    <ul class="column-links">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="about.html">О нас</a></li>
-                        <li><a href="dostavka.html">Доставка</a></li>
-                        <li><a href="Zapchasti.html">Запчасти</a></li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h4 class="column-title">Прочее</h4>
-                    <ul class="column-links">
-                        <li><a href="#">Приватность</a></li>
-                        <li><a href="#">Политика возврата</a></li>
-                        <li><a href="#">Cookie</a></li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h4 class="column-title">Страны</h4>
-                    <div class="countries">
-                        Россия<br>
-                        Армения<br>
-                        Германия<br>
-                        Япония
+        <!-- Блок "Гарантии" -->
+        <div class="text-block animate__animated">
+            <section class="about-section">
+                <h2 class="about-title">ГАРАНТИИ</h2>
+                <div class="about-content">
+                    <div class="about-block top">
+                        <h3>ДЕНЬГИ В БЫСТРЫЕ СРОКИ</h3>
+                        <p>Если вам не понравился товар или вы не <br> хотите замены, вернем обратно деньги <br> за
+                            товар и за короткие сроки</p>
+                    </div>
+                    <div class="about-row">
+                        <div class="about-block left">
+                            <h3>ВОЗМОЖНА <br> ЗАМЕНА</h3>
+                            <p>Если вас не устроило <br>качество полученного <br> товара, сделаем замену <br>товара на
+                                другой </p>
+                        </div>
+                        <div class="about-car">
+                            <img src="mat/Niva.svg" alt="Автомобиль">
+                        </div>
+                        <div class="about-block right">
+                            <h3>ПОМОЖЕМ <br>В ЛЮБОЕ ВРЕМЯ</h3>
+                            <p>Наша главная задача быть <br>самыми быстрыми и отзывчивыми с нашими клиентами</p>
+                        </div>
+                    </div>
+                    <div class="about-block bottom">
+                        <h3>ТОВАРЫ ЗАСТРАХОВАНЫ</h3>
+                        <p>Каждый товар который мы отправляем <br> доставкой или заказываем в пункт<br> выдачи
+                            застрахован </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.animate__animated');
-            elements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.style.opacity = 1;
-                    el.classList.add('animate__fadeInUp');
-                }, index * 200);
-            });
-        });
-        </script>
+            </section>
+
+            <!-- Подвал -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="logo-section">
+                        <img src="mat/Лого.svg" alt="Логотип" class="logo">
+                        <div class="social-icons">
+                            <a href="Contacts.html"><img src="mat/telegram.svg" alt="Telegram"></a>
+                            <a href="Contacts.html"><img src="mat/VK.svg" alt="VK"></a>
+                            <a href="Contacts.html"><img src="mat/Instagram.svg" alt="Instagram"></a>
+                            <a href="Contacts.html"><img src="mat/Whatsapp.svg" alt="WhatsApp"></a>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="copyright">© ArtemovichCorp. Все Права Защищены.</div>
+                        </div>
+                    </div>
+
+                    <div class="columns-wrapper">
+                        <div class="column">
+                            <h4 class="column-title">Магазин</h4>
+                            <ul class="column-links">
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="about.html">О нас</a></li>
+                                <li><a href="dostavka.html">Доставка</a></li>
+                                <li><a href="Zapchasti.html">Запчасти</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4 class="column-title">Прочее</h4>
+                            <ul class="column-links">
+                                <li><a href="#">Приватность</a></li>
+                                <li><a href="#">Политика возврата</a></li>
+                                <li><a href="#">Cookie</a></li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4 class="column-title">Страны</h4>
+                            <div class="countries">
+                                Россия<br>
+                                Армения<br>
+                                Германия<br>
+                                Япония
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const elements = document.querySelectorAll('.animate__animated');
+                    elements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.style.opacity = 1;
+                            el.classList.add('animate__fadeInUp');
+                        }, index * 200);
+                    });
+                });
+            </script>
+
+            <script>
+                // Гамбургер-меню
+                const hamburger = document.querySelector('.hamburger');
+                const nav = document.querySelector('nav');
+
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+
+                // Закрытие меню при клике вне области
+                document.addEventListener('click', (e) => {
+                    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                });
+                // Закрытие меню при скролле
+                window.addEventListener('scroll', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+
+                // Адаптивная высота шапки
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        hamburger.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                });
+
+            </script>
+
+            <script>
+                // Обновленный скрипт для активных ссылок
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Определяем текущую страницу
+                    const currentPath = window.location.pathname;
+                    let currentPage = currentPath.split('/').pop().split('?')[0];
+
+                    // Обработка главной страницы
+                    if (currentPage === "" || currentPage === "/") currentPage = "index.html";
+
+                    // Находим и отмечаем активную ссылку
+                    const links = document.querySelectorAll('nav a');
+                    links.forEach(link => {
+                        const linkPath = link.getAttribute('href').split('?')[0];
+                        if (linkPath === currentPage) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            </script>
 </body>
+
 </html>

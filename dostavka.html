@@ -14,6 +14,11 @@
         <div class="logo">
             <img src="mat/Лого.svg" alt="Лого"> 
         </div>
+        <div class="hamburger">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
         <nav>
             <a href="index.html">Главная</a>
             <a href="about.html">О нас</a>
@@ -140,5 +145,59 @@
         });
     });
     </script>
+
+<script>
+    // Гамбургер-меню
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    // Закрытие меню при клике вне области
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        }
+    });
+    // Закрытие меню при скролле
+    window.addEventListener('scroll', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+    });
+
+    // Адаптивная высота шапки
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        }
+    });
+    
+</script>
+
+<script>
+// Обновленный скрипт для активных ссылок
+document.addEventListener('DOMContentLoaded', function() {
+// Определяем текущую страницу
+const currentPath = window.location.pathname;
+let currentPage = currentPath.split('/').pop().split('?')[0];
+
+// Обработка главной страницы
+if(currentPage === "" || currentPage === "/") currentPage = "index.html";
+
+// Находим и отмечаем активную ссылку
+const links = document.querySelectorAll('nav a');
+links.forEach(link => {
+const linkPath = link.getAttribute('href').split('?')[0];
+if(linkPath === currentPage) {
+link.classList.add('active');
+}
+});
+});
+</script>
 </body>
 </html>

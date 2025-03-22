@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
+
 body {
     animation: fadeIn 0.8s ease-out;
     font-family: 'Exo 2', sans-serif;
@@ -7,6 +10,7 @@ body {
     min-height: 200vh; /* Для демонстрации прокрутки */
 }
 header {
+    z-index: 1000;
     animation: fadeInDown 0.8s ease-out 0.2s both;
     background-color: #222222;
     padding: 10px 40px;
@@ -32,6 +36,11 @@ nav a {
     padding-bottom: 5px;
     transition: all 0.3s ease;
 }
+
+nav a.active::after {
+    width: 100% !important;
+    background: #fff;
+}
 nav a:hover {
     color: #ffffff; 
 }
@@ -49,14 +58,27 @@ nav a:hover::after {
     width: 100%;
 }
 .login-button {
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     color: #ffffff;
     cursor: pointer;
-    transition: color 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.login-button span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.login-button img {
+    width: 65%;
+    height: 60%;
+    object-fit: contain;
+    padding-top: 3.8px;
+    padding-right: 6px;
 }
 .login-button::after {
     content: '';
@@ -93,6 +115,7 @@ nav a:hover::after {
     }
 }
 
+
 /* Блок 1 */
 
 .button-container {
@@ -102,7 +125,6 @@ nav a:hover::after {
     top: 80px;
     display: flex;
     gap: 17px;
-    z-index: 200;
     padding-left: 20px;
 }
 
@@ -144,7 +166,7 @@ nav a:hover::after {
     max-width: 1400px;
     width: 85%;
     height: auto;
-    z-index: 2;
+    z-index: -1;
     position: relative;
 }
 .logo-image {
@@ -153,17 +175,65 @@ nav a:hover::after {
     top: 0;
     left: 50%;
     transform: translate(-50%, -25%); /* Смещаем вверх на 25% */
-    z-index: 1;
+    z-index: -2;
     width: 90%;
     max-width: 1200px;
     pointer-events: none; /* Чтобы клики проходили сквозь логотип */
 }
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .button-container {
+      margin-top: -45px;
+      padding-left: 15px;
+      position: relative;
+    }
+  
+    .sidebar-button {
+      width: 70px;
+      height: 22px;
+      font-size: 9px;
+      margin-bottom: 5px;
+    }
+  
+    .content-wrapper {
+      padding: 120px 10px 30px 0;
+    }
+  
+    .car-photo {
+      width: 95%;
+    }
+  
+    .logo-image {
+      margin-top: 20vh; /* Изменяем абсолютные пиксели на относительные */
+      transform: translate(-50%, -30%); /* Усиливаем смещение вверх */
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-image {
+      margin-top: 12vh;
+      transform: translate(-50%, -35%);
+      width: 95%;
+    }
+    
+    .button-container {
+      justify-content: center;
+      padding-left: 5px;
+    }
+    
+    .main-content {
+      padding-top: 60px;
+    }
+  }
 
 /* Блок товаров (Блок 2) */
 
 .products-section {
     animation: fadeIn 0.8s ease-out 0.8s both;
     padding: 60px 20px;
+    padding-bottom: 100px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -307,6 +377,8 @@ nav a:hover::after {
 
 /* ПОДВАЛ */
 .footer {
+    position: relative;
+    z-index: 10;
     background: #1a1a1a;
     color: #fff;
     padding: 50px 20px 30px;
@@ -417,3 +489,204 @@ nav a:hover::after {
     line-height: 1.8;
     font-size: 15px;
 }
+
+/* Мобильная адаптация (шапка) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .logo img {
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    nav {
+        z-index: 1;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        row-gap: 0.5rem;
+        text-align: center;
+        clip-path: circle(0% at 0% 0%);
+        transition: 0.6s;
+        background-color: #222222;
+    }
+
+    nav.active {
+        clip-path: circle(144% at 0% 0%);
+    }
+
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+
+    .nav a:hover,
+    .nav .active {
+      border-bottom: none;
+      background: var(--main-color);
+      color: var(--bg-color);
+    }
+
+    .hamburger, .hamburger-line {
+        z-index: 1;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        
+        padding-bottom: 15px;
+    }
+
+    .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+    }
+ 
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .login-button {
+        width: 100%;
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .login-button span {
+        width: 28px;
+        height: 28px;
+    }
+
+    
+    /* Скрываем обычное меню на мобильных */
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+
+/* Мобильная адаптация (подвал) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .logo-section {
+        flex: none;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .social-icons {
+        margin-left: 0;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .social-icons img {
+        padding: 0 15px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .columns-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .column {
+        text-align: center;
+    }
+    
+    .column-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    
+    .column-links a {
+        font-size: 14px;
+    }
+    
+    .countries {
+        font-size: 14px;
+    }
+    
+    .footer-bottom {
+        padding-top: 15px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+        padding: 0 12px;
+    }
+    
+    .logo {
+        max-width: 250px;
+    }
+    
+    .copyright {
+        font-size: 12px;
+    }
+    
+    .column-links li {
+        margin-bottom: 12px;
+    }
+}
+
+
+

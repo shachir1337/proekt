@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <!-- Шапка сайта -->
     <header>
         <div class="logo">
-            <img src="mat/Лого.svg" alt="Лого"> 
+            <img src="mat/Лого.svg" alt="Лого">
+        </div>
+        <div class="hamburger">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
         </div>
         <nav>
             <a href="index.html">Главная</a>
@@ -25,7 +32,7 @@
             <div class="login-button">
                 <script>
                     // Пример обработки клика по кнопке "Вход"
-                    document.querySelector('.login-button').addEventListener('click', function() {
+                    document.querySelector('.login-button').addEventListener('click', function () {
                         // Перенаправление на страницу входа
                         window.location.href = '/BURNOUTPROGRESS'; // Замените '/login' на ваш URL страницы входа
                     });
@@ -49,7 +56,7 @@
         <button class="sidebar-button">HYUNDAI</button>
         <button class="sidebar-button">SUBARU</button>
     </div>
-     
+
     <div class="main-content">
         <!-- Блок с машиной -->
         <div class="content-wrapper">
@@ -68,15 +75,15 @@
 
             // Обработчик для других кнопок
             buttons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     buttons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
                     contentWrapper.classList.toggle('active', this === buttons[0]);
                 });
             });
 
-  
-            });
+
+        });
     </script>
 
     <!-- Блок 2 -->
@@ -154,42 +161,42 @@
                     <div class="price">15 022 <b>₽</b></div>
                     <div class="stock">Осталось 3 шт</div>
                     <div class="product-title">Мультимедия на LADA VESTA (дорестайлинг)</div>
-                    <button class="add-to-cart" onclick="window.location.href='buy.html';">В КОРЗИНУ</button>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
                 </div>
-        </div>
-
-        <!-- Товар 8 -->
-        <div class="product-card">
-            <img src="mat/Подогрев 1.png" class="product-image" alt="Подогрев">
-            <div class="product-content">
-                <div class="price">3 543 <b>₽</b></div>
-                <div class="stock">Осталось 4 шт</div>
-                <div class="product-title">Подогрев сидений LADA VESTA</div>
-                <button class="add-to-cart">В КОРЗИНУ</button>
             </div>
-    </div>
 
-    <!-- Товар 9 -->
-    <div class="product-card">
-        <img src="mat/Рейлинги.png" class="product-image" alt="Рейлинги">
-        <div class="product-content">
-            <div class="price">6 541 <b>₽</b></div>
-            <div class="stock">Осталось 2 шт</div>
-            <div class="product-title">Рейлинги LADA VESTA (дорейстайлинг)</div>
-            <button class="add-to-cart">В КОРЗИНУ</button>
-        </div>
-</div>
+            <!-- Товар 8 -->
+            <div class="product-card">
+                <img src="mat/Подогрев 1.png" class="product-image" alt="Подогрев">
+                <div class="product-content">
+                    <div class="price">3 543 <b>₽</b></div>
+                    <div class="stock">Осталось 4 шт</div>
+                    <div class="product-title">Подогрев сидений LADA VESTA</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
 
-<!-- Товар 10 -->
-<div class="product-card">
-    <img src="mat/Зеркало.png" class="product-image" alt="Зеркало">
-    <div class="product-content">
-        <div class="price">6 541 <b>₽</b></div>
-        <div class="stock">Осталось 2 шт</div>
-        <div class="product-title">Зеркала (2 шт) LADA VESTA (дорейстайлинг)</div>
-        <button class="add-to-cart">В КОРЗИНУ</button>
-    </div>
-</div>
+            <!-- Товар 9 -->
+            <div class="product-card">
+                <img src="mat/Рейлинги.png" class="product-image" alt="Рейлинги">
+                <div class="product-content">
+                    <div class="price">6 541 <b>₽</b></div>
+                    <div class="stock">Осталось 2 шт</div>
+                    <div class="product-title">Рейлинги LADA VESTA (дорейстайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <!-- Товар 10 -->
+            <div class="product-card">
+                <img src="mat/Зеркало.png" class="product-image" alt="Зеркало">
+                <div class="product-content">
+                    <div class="price">6 541 <b>₽</b></div>
+                    <div class="stock">Осталось 2 шт</div>
+                    <div class="product-title">Зеркала (2 шт) LADA VESTA (дорейстайлинг)</div>
+                    <button class="add-to-cart">В КОРЗИНУ</button>
+                </div>
+            </div>
     </section>
     </div>
 
@@ -199,7 +206,7 @@
             <!-- Логотип, соцсети и нижняя часть -->
             <div class="logo-section">
                 <img src="mat/Лого.svg" alt="Логотип" class="logo">
-                
+
                 <!-- Соцсети -->
                 <div class="social-icons">
                     <a href="Contacts.html"><img src="mat/telegram.svg" alt="Telegram"></a>
@@ -250,8 +257,63 @@
             </div>
         </div>
     </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Гамбургер-меню
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике вне области
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+        // Закрытие меню при скролле
+        window.addEventListener('scroll', () => {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        });
+
+        // Адаптивная высота шапки
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+
+    </script>
+
+    <script>
+        // Обновленный скрипт для активных ссылок
+        document.addEventListener('DOMContentLoaded', function () {
+            // Определяем текущую страницу
+            const currentPath = window.location.pathname;
+            let currentPage = currentPath.split('/').pop().split('?')[0];
+
+            // Обработка главной страницы
+            if (currentPage === "" || currentPage === "/") currentPage = "index.html";
+
+            // Находим и отмечаем активную ссылку
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                const linkPath = link.getAttribute('href').split('?')[0];
+                if (linkPath === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             const elements = document.querySelectorAll('.animate__animated');
             elements.forEach((el, index) => {
                 setTimeout(() => {
@@ -260,6 +322,38 @@
                 }, index * 200);
             });
         });
-        </script>
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function () {
+                    const productCard = this.closest('.product-card');
+                    const productImage = productCard.querySelector('.product-image').src;
+                    const productTitle = productCard.querySelector('.product-title').textContent;
+                    const price = parseInt(productCard.querySelector('.price').textContent.replace(/\D/g, ''));
+
+                    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                    const existingItem = cartItems.find(item =>
+                        item.title === productTitle && item.price === price
+                    );
+
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cartItems.push({
+                            image: productImage,
+                            title: productTitle,
+                            price: price,
+                            quantity: 1
+                        });
+                    }
+
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    alert('Товар добавлен в корзину');
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

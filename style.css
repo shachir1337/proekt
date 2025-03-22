@@ -146,11 +146,11 @@ nav a:hover::after {
     }
     .image-block {
         margin-right: 70px;
-        width: 100%;
+        width: 350px;
     }
     .image-block,
     .bottom-image {
-        max-width: 100%;
+        /* max-width: 100%; */
         text-align: center;
     }
 
@@ -731,7 +731,7 @@ nav a:hover::after {
         font-size: 2.25rem;
     }
     .container {
-        margin-left: 20px;
+        margin-left: 5px;
     }
     .text-block h1 {
         font-size: 1.55rem;
