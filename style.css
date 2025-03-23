@@ -145,7 +145,7 @@ nav a:hover::after {
         order: 0;
     }
     .image-block {
-        margin-right: 70px;
+        margin-left: -70px;
         width: 350px;
     }
     .image-block,

@@ -13,6 +13,8 @@ body {
 
 /* HEADER */
 header {
+  z-index: 1000;
+  animation: fadeInDown 0.8s ease-out 0.2s both;
   background-color: #222222;
   padding: 10px 40px;
   display: flex;
@@ -20,18 +22,15 @@ header {
   align-items: center;
   border-bottom: 1px solid #444;
 }
-
 .logo img {
-  height: 40px;
+  height: 40px; /* Высота логотипа */
   padding-top: 30px;
 }
-
 nav {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
 nav a {
   text-decoration: none;
   color: #ffffff;
@@ -41,10 +40,13 @@ nav a {
   transition: all 0.3s ease;
 }
 
-nav a:hover {
-  color: #ffffff;
+nav a.active::after {
+  width: 100% !important;
+  background: #fff;
 }
-
+nav a:hover {
+  color: #ffffff; 
+}
 nav a::after {
   content: '';
   position: absolute;
@@ -55,20 +57,21 @@ nav a::after {
   bottom: 0;
   transition: width 0.3s ease;
 }
-
 nav a:hover::after {
   width: 100%;
 }
-
 .login-button {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #ffffff;
   cursor: pointer;
-  transition: color 0.3s ease;
-  position: relative;
-  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.login-button img {
+  padding-bottom: 6px;
 }
 
 .login-button::after {
@@ -81,7 +84,6 @@ nav a:hover::after {
   bottom: 0;
   transition: width 0.3s ease;
 }
-
 .login-button:hover::after {
   width: 100%;
 }
@@ -163,6 +165,60 @@ nav a:hover::after {
   margin-top: 15px;
 }
 
+.parts-image, .car-image {
+  object-fit: contain;
+  height: auto;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info-block {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  
+  .info-block:nth-child(1) { /* Блок с предложением цен */
+    order: 2;
+  }
+  .info-block:nth-child(1) .parts-image { /* Блок с предложением цен */
+    order: 2;
+  }
+  
+  .info-block:nth-child(2) { /* Блок с заголовком о компании */
+    order: 1;
+  }
+  .info-block:nth-child(2) .car-image { /* Блок с заголовком о компании */
+    order: 1;
+  }
+  
+  .parts-image {
+    width: 200px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+  }
+  
+  .car-image {
+    width: 300px;
+    margin-top: 20px;
+  }
+  
+  .info-block h2 {
+    font-size: 20px;
+    margin: 15px 0;
+  }
+  
+  .info-block p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+}
+
 /* --- Секция "Знакомство с нами" --- */
 .about-section {
   max-width: 1000px;
@@ -230,12 +286,12 @@ nav a:hover::after {
   }
   
   .about-block {
-      width: 80%;
+      width: 90%;
       text-align: center;
   }
   
   .about-car img {
-      width: 200px;
+      width: 250px;
   }
 }
 

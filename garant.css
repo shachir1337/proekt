@@ -13,6 +13,8 @@ body {
 
 /* HEADER */
 header {
+  z-index: 1000;
+  animation: fadeInDown 0.8s ease-out 0.2s both;
   background-color: #222222;
   padding: 10px 40px;
   display: flex;
@@ -20,18 +22,15 @@ header {
   align-items: center;
   border-bottom: 1px solid #444;
 }
-
 .logo img {
-  height: 40px;
+  height: 40px; /* Высота логотипа */
   padding-top: 30px;
 }
-
 nav {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
 nav a {
   text-decoration: none;
   color: #ffffff;
@@ -41,10 +40,13 @@ nav a {
   transition: all 0.3s ease;
 }
 
-nav a:hover {
-  color: #ffffff;
+nav a.active::after {
+  width: 100% !important;
+  background: #fff;
 }
-
+nav a:hover {
+  color: #ffffff; 
+}
 nav a::after {
   content: '';
   position: absolute;
@@ -55,20 +57,21 @@ nav a::after {
   bottom: 0;
   transition: width 0.3s ease;
 }
-
 nav a:hover::after {
   width: 100%;
 }
-
 .login-button {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #ffffff;
   cursor: pointer;
-  transition: color 0.3s ease;
-  position: relative;
-  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.login-button img {
+  padding-bottom: 6px;
 }
 
 .login-button::after {
@@ -81,7 +84,6 @@ nav a:hover::after {
   bottom: 0;
   transition: width 0.3s ease;
 }
-
 .login-button:hover::after {
   width: 100%;
 }
@@ -232,12 +234,12 @@ nav a:hover::after {
   }
   
   .about-block {
-      width: 80%;
+      width: 90%;
       text-align: center;
   }
   
   .about-car img {
-      width: 200px;
+      width: 350px;
   }
 }
 

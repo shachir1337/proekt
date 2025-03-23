@@ -271,6 +271,7 @@ nav a:hover::after {
 }
 
 .checkout-button {
+    font-family: 'Exo 2' bold;
     width: 100%; /* Автоматическая ширина в зависимости от текста */
     min-width: 200px; /* Минимальная ширина кнопки */
     background-color: #971717; /* Основной цвет */
@@ -308,6 +309,12 @@ nav a:hover::after {
     
     .item-price .current-price {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .cart-item {
+        min-height: 400px;
     }
 }
 

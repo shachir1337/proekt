@@ -8,6 +8,7 @@ body {
     background-color: #222222;
 }
 header {
+    z-index: 1000;
     animation: fadeInDown 0.8s ease-out 0.2s both;
     background-color: #222222;
     padding: 10px 40px;
@@ -15,28 +16,33 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #444;
-}
-.logo img {
+  }
+  .logo img {
     height: 40px; /* Высота логотипа */
     padding-top: 30px;
-}
-nav {
+  }
+  nav {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-nav a {
+  }
+  nav a {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
     position: relative;
     padding-bottom: 5px;
     transition: all 0.3s ease;
-}
-nav a:hover {
+  }
+  
+  nav a.active::after {
+    width: 100% !important;
+    background: #fff;
+  }
+  nav a:hover {
     color: #ffffff; 
-}
-nav a::after {
+  }
+  nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -45,21 +51,23 @@ nav a::after {
     left: 0;
     bottom: 0;
     transition: width 0.3s ease;
-}
-nav a:hover::after {
+  }
+  nav a:hover::after {
     width: 100%;
-}
-.login-button {
-    display: flex;
+  }
+  .login-button {
+    position: relative;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     color: #ffffff;
     cursor: pointer;
-    transition: color 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
-}
-.login-button::after {
+    transition: all 0.3s ease;
+  }
+  
+
+  
+  .login-button::after {
     content: '';
     position: absolute;
     width: 0;
@@ -68,10 +76,10 @@ nav a:hover::after {
     left: 0;
     bottom: 0;
     transition: width 0.3s ease;
-}
-.login-button:hover::after {
+  }
+  .login-button:hover::after {
     width: 100%;
-}
+  }
 
 /* Блок приветствия 1 */
 

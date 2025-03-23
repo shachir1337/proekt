@@ -226,6 +226,10 @@ nav a:hover::after {
     .main-content {
       padding-top: 60px;
     }
+    .car-photo {
+        margin-top: -70px;
+        margin-left: 18px;
+    }
   }
 
 /* Блок товаров (Блок 2) */
