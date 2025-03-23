@@ -88,6 +88,29 @@ nav a:hover::after {
   width: 100%;
 }
 
+/* Блок приветствия 1 */
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate__animated {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
 /* Основной контейнер */
 .container {
   display: flex;
@@ -135,28 +158,6 @@ nav a:hover::after {
   margin-bottom: -10px;
 }
 
-/* Блок приветствия 1 */
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate__animated {
-    animation-duration: 2s;
-    animation-fill-mode: both;
-    opacity: 0;
-}
-
-.animate__fadeInUp {
-    animation-name: fadeInUp;
-}
 
 /* Изображение машины */
 .car-image {
@@ -165,6 +166,89 @@ nav a:hover::after {
   margin-top: 5px;
   margin-bottom: -60px;
   margin-right: 50px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .info-block {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .parts-image {
+    margin-left: 0;
+    width: 200px;
+  }
+
+  .info-block h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .info-block p {
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  .car-image {
+    width: 250px;
+    margin: 15px 0;
+    margin-right: 0;
+  }
+
+  .info-block:nth-child(2) p {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 10px auto;
+  }
+
+  .info-block h2 {
+    margin-bottom: -10px;
+    font-size: 18px;
+    padding: 0 10px;
+  }
+  
+/* Меняем порядок блоков */
+.info-block:nth-child(1) { order: 2; }
+.info-block:nth-child(2) { order: 1; }
+
+/* Первый блок (станет вторым) */
+.info-block:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+.info-block:nth-child(1) p { order: 1; }
+.info-block:nth-child(1) .parts-image { order: 2; }
+
+/* Второй блок (станет первым) */
+.info-block:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+.info-block:nth-child(2) h2 { order: 1; }
+.info-block:nth-child(2) p { order: 2; }
+.info-block:nth-child(2) .car-image { order: 4; }
+  
+  .parts-image {
+    margin-left: 40px;
+    width: 200px;
+  }
+
+  .car-image {
+    width: 240px;
+  }
 }
 
 /* --- Секция "Знакомство с нами" --- */
