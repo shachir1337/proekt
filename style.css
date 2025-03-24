@@ -241,6 +241,7 @@ nav a:hover::after {
     transition: all 0.3s ease;
     display: inline-block;
     white-space: nowrap;
+    text-decoration: none; 
 }
 
 .text-block .order-button:hover {
@@ -407,6 +408,9 @@ nav a:hover::after {
     
     .all-brands {
         font-size: 1.2rem;
+    }
+    .order-button {
+        width: 80%;
     }
 }
 /* ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ */

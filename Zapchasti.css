@@ -224,10 +224,10 @@ nav a:hover::after {
     }
     
     .main-content {
-      padding-top: 60px;
+      padding-top: 20px;
     }
     .car-photo {
-        margin-top: -70px;
+        margin-top: 0;
         margin-left: 18px;
     }
   }

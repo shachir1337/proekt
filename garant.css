@@ -286,6 +286,10 @@ nav a:hover::after {
   width: 30%;
   text-align: center;
 }
+.right {
+  width: 25%;
+}
+
 
 .about-block h3 {
   font-family: 'Russo One';
@@ -294,7 +298,8 @@ nav a:hover::after {
 }
 
 .about-car img {
-  width: 300px;
+  width: 350px;
+  margin-right: 20px;
 }
 
 .top, .bottom {
@@ -321,9 +326,13 @@ nav a:hover::after {
       width: 90%;
       text-align: center;
   }
+  .right {
+    width: 60%;
+  }
   
   .about-car img {
       width: 350px;
+      margin-right: 0;
   }
 }
 
