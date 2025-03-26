@@ -31,6 +31,8 @@ $(function() {
 	});
 });
 
+
+
 // Гамбургер-меню
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
