@@ -31,7 +31,92 @@ $(function() {
 	});
 });
 
+// Регистрация
+$('.btn-signup').click(function(e) {
+    e.preventDefault();
+    
+    $.ajax({
+        type: 'POST',
+        url: 'register.php',
+        data: $('.form-signup').serialize(),
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+                $('.success').addClass('success-left');
+            } else {
+                $.each(response.errors, function(key, value) {
+                    $(`[name="${key}"]`).addClass('invalid');
+                    $(`<div class="error-message">${value}</div>`)
+                        .insertAfter($(`[name="${key}"]`));
+                });
+            }
+        }
+    });
+});
 
+// Вход
+$('.btn-signin').click(function(e) {
+    e.preventDefault();
+    
+    $.ajax({
+        type: 'POST',
+        url: 'login.php',
+        data: $('.form-signin').serialize(),
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+                window.location.href = 'profile.php';
+            } else {
+                $('.login-error').remove();
+                $(`<div class="login-error" style="color:red; margin-top:20px;">
+                    ${response.error}
+                   </div>`).insertBefore('.btn-animate');
+            }
+        }
+    });
+});
+
+// Валидация пароля в реальном времени
+$('input[name="password"]').on('input', function() {
+    const password = $(this).val();
+    const regex = /^(?=.*\d)(?=.*[a-zа-яё])(?=.*[A-ZА-ЯЁ]).{8,}$/;
+    
+    if (!regex.test(password)) {
+      $(this).addClass('invalid');
+      showError('Пароль должен содержать минимум 8 символов, цифру и буквы разного регистра');
+    } else {
+      $(this).removeClass('invalid');
+    }
+  });
+  
+  // Проверка совпадения паролей
+  $('input[name="confirmpassword"]').on('input', function() {
+    if ($(this).val() !== $('input[name="password"]').val()) {
+      $(this).addClass('invalid');
+      showError('Пароли не совпадают');
+    } else {
+      $(this).removeClass('invalid');
+    }
+  });
+  
+  // Валидация email
+  $('input[type="email"]').on('input', function() {
+    const email = $(this).val();
+    const regex = /^[a-z0-9._%+-]+@[a-z-]+\.[a-z]{2,}$/i;
+    
+    if (!regex.test(email)) {
+      $(this).addClass('invalid');
+      showError('Некорректный формат email');
+    } else {
+      $(this).removeClass('invalid');
+    }
+  });
+  
+  function showError(message) {
+    $('.error-message').remove();
+    $('<div class="error-message" style="color:red; margin-top:5px;">'+message+'</div>')
+      .insertAfter($(this));
+  }
 
 // Гамбургер-меню
 const hamburger = document.querySelector('.hamburger');

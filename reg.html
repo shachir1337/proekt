@@ -6,6 +6,7 @@
   <title>BURNOUT PROGRESS</title>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="/mat/Лого2.svg" type="x-icon">
 </head>
 <body>
   <!-- Шапка сайта -->
@@ -54,9 +55,9 @@
         
         <div ng-app ng-init="checked = false">
           <!-- Форма входа -->
-          <form class="form-signin" action="" method="post" name="form">
-            <label for="username">Имя</label>
-            <input class="form-styling" type="text" name="username" placeholder="">
+          <form class="form-signin" action="login.php" method="post">
+            <label for="username">Почта</label>
+            <input class="form-styling" type="email" name="email" required>
             <label for="password">Пароль</label>
             <input class="form-styling" type="password" name="password" placeholder=""> 
             <input type="checkbox" id="checkbox">
@@ -67,11 +68,11 @@
           </form>
 
           <!-- Форма регистрации -->
-          <form class="form-signup" action="" method="post" name="form">
+          <form class="form-signup" action="register.php" method="post">
             <label for="fullname">Имя</label>
             <input class="form-styling" type="text" name="fullname" placeholder="">
             <label for="email">Почта</label>
-            <input class="form-styling" type="email" name="email" placeholder=""> <!-- Исправлено: type="email" -->
+            <input class="form-styling" type="email" name="email" required> <!-- Исправлено: type="email" -->
             <label for="password">Пароль</label>
             <input class="form-styling" type="password" name="password" placeholder=""> <!-- Исправлено: type="password" -->
             <label for="confirmpassword">Повторите пароль</label>
@@ -81,14 +82,14 @@
 
           <!-- Блок успешной регистрации -->
           <div class="success" ng-show="checked">
-            <svg width="270" height="270" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#ffffff" d="M40.61,23.03L26.67,36.97L13.495,23.788c-1.146-1.147-1.359-2.936-0.504-4.314..."/>
-            </svg>
-            <div class="successtext"> <!-- Вынесено из тега svg -->
-              <p>Спасибо за регистрацию! Проверьте свою почту</p>
+            <div class="success-content">
+              <svg class="success-icon" ...></svg>
+              <div class="successtext">
+                <p>Спасибо за регистрацию! Проверьте свою почту</p>
+                <button class="close-success">×</button>
+              </div>
             </div>
           </div>
-        </div>
 
         <div class="forgot">
           <a href="#">Забыли пароль?</a>
@@ -166,5 +167,6 @@
           </div>
       </div>
   </footer>
+  <div class="overlay"></div>
 </body>
 </html>

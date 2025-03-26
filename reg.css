@@ -573,7 +573,7 @@ a.btn-signup:hover, a.btn-signin:hover {
   border-radius: 70px;
   left: 155px;
   top: -1000px;
-  background: url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/nature-water-rocks-hiking.jpg);
+  /* background: url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/nature-water-rocks-hiking.jpg); */
   background-size: 100% 135%;
   background-position: 100% 100%;
   opacity: 0;
@@ -631,31 +631,26 @@ a.btn-goback:hover {
     color: #ffffff;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .cart-item {
-      flex-direction: column;
-      min-height: auto;
-  }
-  
-  .item-image {
-      width: 100%;
-      height: 200px;
-  }
-  
-  .item-description {
-      font-size: 14px;
-  }
-  
-  .item-price .current-price {
-      font-size: 20px;
-  }
+/* Стилизация ошибок */
+
+.invalid {
+  border: 2px solid #ff4444 !important;
+  background: rgba(255, 68, 68, 0.1) !important;
 }
 
-@media (max-width: 375px) {
-  .cart-item {
-      min-height: 400px;
-  }
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 5px;
+  padding-left: 15px;
+}
+
+.login-error {
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 68, 68, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 /* ПОДВАЛ */
