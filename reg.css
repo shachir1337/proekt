@@ -653,6 +653,75 @@ a.btn-goback:hover {
   margin-bottom: 20px;
 }
 
+/* Время */
+
+.time-wrapper {
+  font-family: 'Exo 2';
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.real-time-clock {
+  background: rgba(151, 23, 23, 0.9);
+  padding: 12px 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: right;
+}
+
+.time {
+  display: block;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.date {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .time-wrapper {
+      top: 15px;
+      right: 15px;
+      left: auto;
+  }
+  
+  .real-time-clock {
+      padding: 8px 15px;
+  }
+  
+  .time {
+      font-size: 20px;
+  }
+  
+  .date {
+      font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .time {
+      font-size: 18px;
+  }
+  
+  .date {
+      font-size: 10px;
+  }
+}
+
 /* ПОДВАЛ */
 .footer {
   background: #1a1a1a;

@@ -217,6 +217,16 @@ nav a:hover::after {
     line-height: 1.4;
   }
 
+  .container_v h1 {
+    font-size: 25px;
+    margin-right: 20px;
+  }
+
+   .video-wrapper video {
+width: 90%;
+margin-left: -40px;
+  }
+
 }
 
 /* --- Секция "Знакомство с нами" --- */
@@ -295,6 +305,49 @@ nav a:hover::after {
   }
 }
 
+.container_v {
+  flex-direction: column;
+  margin: 0 auto; /* Добавлено выравнивание по центру */
+  padding: 20px; /* Добавим отступы от краёв экрана */
+  max-width: 1200px;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-family: 'Russo One';
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.video-wrapper {
+    justify-content: center; /* Горизонтальное выравнивание */
+    align-items: center; /* Вертикальное выравнивание */
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding-bottom: 0; /* 16:9 aspect ratio */
+    margin: 0 auto; /* Центрируем видео-блок */
+}
+
+video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 0 30px #971717;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
 /* ПОДВАЛ */
 .footer {

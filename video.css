@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Russo+One&display=swap');
+
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222222;
+}
+header {
+    animation: fadeInDown 0.8s ease-out 0.2s both;
+    background-color: #222222;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+.logo img {
+    height: 40px; /* Высота логотипа */
+    padding-top: 30px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a.active::after {
+    width: 100% !important;
+    background: #fff;
+}
+nav a:hover {
+    color: #ffffff; 
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
+.login-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.login-button img {
+    width: 65%;
+    height: 60%;
+    object-fit: contain;
+    padding-top: 3.8px;
+    padding-right: 6px;
+}
+.login-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+.login-button:hover::after {
+    width: 100%;
+}
+
+/* Блок приветствия 1 */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+/* видео */
+
+.container {
+    margin: 0 auto; /* Добавлено выравнивание по центру */
+    padding: 20px; /* Добавим отступы от краёв экрана */
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'Russo One';
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.video-wrapper {
+    justify-content: center; /* Горизонтальное выравнивание */
+    align-items: center; /* Вертикальное выравнивание */
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin-bottom: 50px;
+    margin: 0 auto; /* Центрируем видео-блок */
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 0 30px #971717;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .container {
+        padding: 10px; /* Уменьшаем отступы на мобильных */
+    }
+
+    .container h1 {
+        font-size: 25px;
+        margin-right: 20px;
+      }
+    
+       .video-wrapper video {
+    width: 90%;
+    margin-left: 10px;
+      }
+}
+
+/* ПОДВАЛ */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 50px 20px 30px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+}
+
+/* Логотип, соцсети и нижняя часть */
+.logo-section {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 480px;
+    max-width: 100%;
+    margin-bottom: 25px;
+    height: auto;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    padding: 0 20px 0 20px;
+    transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+
+.footer-bottom {
+    margin-top: auto;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: -10px;
+    width: 100%;
+    text-align: center;
+}
+
+.brand-name {
+    font-family: 'Russo One', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    color: #808080;
+    font-size: 14px;
+}
+
+/* Основные колонки */
+.columns-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 15%;
+}
+
+.column {
+    flex: 1;
+}
+
+.column-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.column-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column-links li {
+    margin-bottom: 15px;
+}
+
+.column-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+.column-links a:hover {
+    color: #971717;
+}
+
+/* Страны */
+.countries {
+    color: #b3b3b3;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* Мобильная адаптация (подвал) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .logo-section {
+        flex: none;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .social-icons {
+        margin-left: 0;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .social-icons img {
+        padding: 0 15px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .columns-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .column {
+        text-align: center;
+    }
+    
+    .column-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    
+    .column-links a {
+        font-size: 14px;
+    }
+    
+    .countries {
+        font-size: 14px;
+    }
+    
+    .footer-bottom {
+        padding-top: 15px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+        padding: 0 12px;
+    }
+    
+    .logo {
+        max-width: 250px;
+    }
+    
+    .copyright {
+        font-size: 12px;
+    }
+    
+    .column-links li {
+        margin-bottom: 12px;
+    }
+}
+
+
+/* Мобильная адаптация (шапка) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .logo img {
+        height: 35px;
+        padding-top: 15px;
+    }
+
+    nav {
+        z-index: 1;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        row-gap: 0.5rem;
+        text-align: center;
+        clip-path: circle(0% at 0% 0%);
+        transition: 0.6s;
+        background-color: #222222;
+    }
+
+    nav.active {
+        clip-path: circle(144% at 0% 0%);
+    }
+
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+
+    .nav a:hover,
+    .nav .active {
+      border-bottom: none;
+      background: var(--main-color);
+      color: var(--bg-color);
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1001;
+        padding-bottom: 15px;
+    }
+
+    .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+    }
+ 
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .login-button {
+        width: 100%;
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .login-button span {
+        width: 28px;
+        height: 28px;
+    }
+
+    
+    /* Скрываем обычное меню на мобильных */
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}
+

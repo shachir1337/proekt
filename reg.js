@@ -118,6 +118,106 @@ $('input[name="password"]').on('input', function() {
       .insertAfter($(this));
   }
 
+//   cookie
+$(document).ready(function() {
+    // Функции для работы с cookies
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length);
+        }
+        return null;
+    }
+
+    function deleteCookie(name) {
+        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+
+    // Автозаполнение формы при наличии cookies
+    const savedUsername = getCookie('username');
+    const savedPassword = getCookie('password');
+    if (savedUsername && savedPassword) {
+        $('input[name="username"]').val(savedUsername);
+        $('input[name="password"]').val(savedPassword);
+        $('#checkbox').prop('checked', true);
+    }
+
+    // Обработчик для кнопки "Войти"
+    $('.btn-signin').click(function(e) {
+        e.preventDefault();
+        
+        const username = $('input[name="username"]').val();
+        const password = $('input[name="password"]').val();
+        const rememberMe = $('#checkbox').is(':checked');
+
+        // Сохранение в cookies
+        if (rememberMe) {
+            setCookie('username', username, 7);
+            setCookie('password', password, 7);
+        } else {
+            deleteCookie('username');
+            deleteCookie('password');
+        }
+
+        // Здесь должна быть логика авторизации
+        console.log('Процесс входа...');
+    });
+
+    // Обработчик для кнопки "Регистрация"
+    $('.btn-signup').click(function() {
+        // Очистка cookies при регистрации
+        deleteCookie('username');
+        deleteCookie('password');
+    });
+});
+
+// API времени
+
+function initTime() {
+    const $time = $('.time');
+    const $date = $('.date');
+    
+    function update() {
+        const now = new Date();
+        const timeOptions = {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        };
+        
+        const dateOptions = {
+            weekday: 'short',
+            day: 'numeric',
+            month: 'short'
+        };
+        
+        $time.text(now.toLocaleTimeString('ru-RU', timeOptions));
+        $date.text(now.toLocaleDateString('ru-RU', dateOptions));
+    }
+    
+    // Плавное появление
+    $('.time-wrapper').css({opacity: 0})
+                      .delay(1000)
+                      .animate({opacity: 1}, 800);
+    
+    // Обновление каждую секунду
+    update();
+    setInterval(update, 1000);
+}
+
+// Вызвать функцию при загрузке
+$(document).ready(initTime);
+
 // Гамбургер-меню
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
